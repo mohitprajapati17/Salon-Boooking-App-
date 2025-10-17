@@ -3,6 +3,7 @@ import SalonDetail from './SalonDetail'
 import { Button } from '@mui/material'
 import { useState } from 'react'
 import { Divider } from '@mui/material'
+import Review from '../../customer/Review/Review'
 
 import SalonServiceDetails from './SalonServiceDetails'
 const tabs=[{name:"AllServices"},{name:"Reviews"},{name:"Create Review"}]
@@ -26,7 +27,7 @@ function SalonDetails() {
         {activeTab.name==="AllServices"? <div>
             <SalonServiceDetails/> 
             </div>:activeTab.name==="Reviews"? <div>
-            Reviews form 
+            <Review/>
             </div>:<div> create Reviews</div>}
     </div>
     
