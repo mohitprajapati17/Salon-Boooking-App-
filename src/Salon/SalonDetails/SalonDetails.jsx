@@ -5,11 +5,21 @@ import { useState } from 'react'
 import { Divider } from '@mui/material'
 import Review from '../../customer/Review/Review'
 import CreateReviewForm from '../../customer/Review/CreateReviewForm'
-
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 import SalonServiceDetails from './SalonServiceDetails'
 const tabs=[{name:"AllServices"},{name:"Reviews"},{name:"Create Review"}]
 function SalonDetails() {
+    const formik=useFormik({
+        initialValues:{
+            ReviewText:"",
+            ReviewRating:0
+        },
+        onSubmit:(values)=>{
+            console.log(values)
+        }
+    })
     const[activeTab , setActiveTab]=useState(tabs[0])
     const handleActiveTab=(tab)=>{
         setActiveTab(tab)
@@ -30,7 +40,7 @@ function SalonDetails() {
             <SalonServiceDetails/> 
             </div>:activeTab.name==="Reviews"? <div>
             <Review/>
-            </div>:<div> <CreateReviewForm/></div>}
+            </div>:<div  className='flex justify-center'> <CreateReviewForm/></div>}
     </div>
     
     </div>
