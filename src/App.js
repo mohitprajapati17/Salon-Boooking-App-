@@ -9,15 +9,26 @@ import Review from "./customer/Review/Review";
 import Booking from "./customer/Booking/Booking";
 import Notifications from "./customer/Notification/Notifications";
 import Navbar from "./customer/NavBar/Navbar";
+import { Routes, Route } from "react-router-dom";
+import SalonDashboard from "./seller/SalonDashboard";
+import CustomerRoutes from "./routes/CustomerRoutes";
+
+
+
+
 
 function App() {
   return (
     <ThemeProvider theme={greenTheme}>
       <Navbar/>
-      <Home/>
-    {/* <SalonDetails/> */}
-    {/* <Booking/> */}
-    {/* <Notifications/> */}
+    
+  
+    <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/*" element={<CustomerRoutes/>}/>
+    
+
+    </Routes>
     
     </ThemeProvider>
   );

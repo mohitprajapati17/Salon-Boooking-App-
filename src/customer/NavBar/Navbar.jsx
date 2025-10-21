@@ -6,9 +6,13 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { useState } from 'react'
 import { AccountCircle } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
+import { Logout } from '@mui/icons-material'
+
 
 function Navbar() {
     const [anchorEl , setAnchorEl]=useState(null)
+    const navigate=useNavigate();
     const open = Boolean(anchorEl)
     const handleClick=(event)=>{
         setAnchorEl(event.currentTarget)
@@ -28,12 +32,12 @@ function Navbar() {
         </div>
         <div className="flex items-center gap-3  md:gap-6">
             <Button  variant ="outlined">Become Partner</Button>
-            <IconButton>
+            <IconButton  onClick={()=>navigate("/notifications")}>
                 <Badge badgeContent={4}>
                     <NotificationsActive  color="primary"/>
                 </Badge>
             </IconButton>
-           {false? <div className="flex gap-1 item-center">
+           {true? <div className="flex gap-1 item-center">
                 <h1 className="font-bold my-3"> Mohit</h1>
                 <IconButton id="basic-button" aria-controls={open?'basic-menu':undefined} aria-expanded={open?true:undefined} aria-haspopup="true" onClick={handleClick}>
                     <Avatar sx={{bgcolor:"green"}}>
@@ -50,9 +54,11 @@ function Navbar() {
                     'aria-labelledby': 'basic-button',
                 }}
                 >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={()=>{navigate("/bookings")
+                    handleClose()}}>Bookings</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
+
                 </Menu>
 
             </div>

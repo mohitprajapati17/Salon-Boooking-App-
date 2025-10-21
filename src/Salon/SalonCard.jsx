@@ -1,10 +1,12 @@
 import React from 'react'
 import StarIcon from '@mui/icons-material/Star'
+import { useNavigate } from 'react-router-dom'
 
 function SalonCard() {
+    const navigate=useNavigate()
   return (
     <div >
-          <div className="w-56 md:w-80 rounded-md bg-slate-100 ">
+          <div  onClick={()=>navigate("/salon/2")} className="w-56 md:w-80 rounded-md bg-slate-100 ">
             <img
               className="w-full h-[15rem] object-cover rounded-t-md"
               src={"https://images.pexels.com/photos/4625615/pexels-photo-4625615.jpeg?auto=compress&cs=tinysrgb&w=600"}
