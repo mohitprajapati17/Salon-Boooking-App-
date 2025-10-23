@@ -6,13 +6,13 @@ import Close from '@mui/icons-material/Close';
 function SelectedServicesList() {
   return (
     <div className='my-5 space-y-2'>
-       {[1,1,1,1,1,1,1,1].map((item)=>{
-         return<div className='py-3 px-5 rounded-md bg-slate-100 flex items-center justify-between'>
+       {[1,1,1,1,1,1,1,1].map((item, index)=>{
+         return<div key={index} className='py-3 px-5 rounded-md bg-slate-100 flex items-center justify-between'>
             <h1 className='font-thin'> Stylish Beared</h1>
             <p>$39</p>
-            <IconButton/>
-            <Close/>
-            <IconButton/>
+            <IconButton>
+                <Close/>
+            </IconButton>
 
         </div>
        })}

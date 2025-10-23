@@ -3,8 +3,8 @@ import SalonDetail from './SalonDetail'
 import { Button } from '@mui/material'
 import { useState } from 'react'
 import { Divider } from '@mui/material'
-import Review from '../../customer/Review/Review'
-import CreateReviewForm from '../../customer/Review/CreateReviewForm'
+import Review from '../../Review/Review'
+import CreateReviewForm from '../../Review/CreateReviewForm'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -29,7 +29,7 @@ function SalonDetails() {
     <div><SalonDetail/></div>
     <div className='space-y-4'> 
         <div>
-        {tabs.map((tab)=><Button variant ={tab.name==activeTab.name?"contained":"outlined"} onClick={()=>handleActiveTab(tab)}>{tab.name}</Button>)}
+        {tabs.map((tab, index)=><Button key={index} variant ={tab.name==activeTab.name?"contained":"outlined"} onClick={()=>handleActiveTab(tab)}>{tab.name}</Button>)}
             
         
     </div>

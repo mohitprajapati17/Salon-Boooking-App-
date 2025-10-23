@@ -11,7 +11,7 @@ function NotificationCard() {
             <p> your  booking got confirmed</p>
             <h1 className="space-x-3">
                 {[1,1,1,1,1,1,1,1].map((item,index)=>{
-                    return <span>hair cut</span>
+                    return <span key={index}>hair cut</span>
                     })}
             </h1>
         </div>

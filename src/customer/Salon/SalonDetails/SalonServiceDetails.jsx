@@ -14,10 +14,10 @@ function SalonServiceDetails() {
   return (
     <div className='lg:flex gap-5 h-[90vh] mt-10'>
         <section className='space-y-5 border-r lg:w-[25%] pr-5'>
-           {[1,1,1,1,1,1,1].map((item,index)=><CategoryCard handleCategoryClick={handleCategoryClick(index)} selectCategory={selectCategory} item={index}/>)}
+           {[1,1,1,1,1,1,1].map((item,index)=><CategoryCard key={index} handleCategoryClick={handleCategoryClick(index)} selectCategory={selectCategory} item={index}/>)}
         </section>
         <section className='space-y-2 lg:w-[50%] px-5 lg:px-20 overflow-y-auto'>
-            {[1,1,1,1,1,1,1].map((item)=><div className='space-y-4'>
+            {[1,1,1,1,1,1,1].map((item, index)=><div key={index} className='space-y-4'>
                 <ServiceCard/>
                 <Divider/>
             </div>)}

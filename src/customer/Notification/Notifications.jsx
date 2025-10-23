@@ -9,7 +9,7 @@ function Notifications() {
 
         <div className="space-y-4 md:w-[35rem]">
             {[1,1,1,1,1,1,1,1].map((item,index)=>{
-                return <NotificationCard/>
+                return <NotificationCard key={index}/>
             })}
         </div>
     </div>

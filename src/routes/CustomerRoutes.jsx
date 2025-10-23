@@ -1,16 +1,18 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Home from '../customer/Home/Home'
+
 import Notifications from '../customer/Notification/Notifications'
 import Booking from '../customer/Booking/Booking'
-import SalonDetails from '../Salon/SalonDetails/SalonDetails'
-import SalonDashboard from '../seller/SalonDashboard'
+import SalonDetails from '../customer/Salon/SalonDetails/SalonDetails'
+import SalonDashboard from '../Salon/SalonDashboard'
 import NotFound from '../NotFound/NotFound'
+import Navbar from '../customer/NavBar/Navbar'
 
 function CustomerRoutes() {
 
   return (
     <div>
+    {/* <Navbar/> */}
     <Routes>
 
     <Route path="/salon-dashboard/*" element={<SalonDashboard/>}/>

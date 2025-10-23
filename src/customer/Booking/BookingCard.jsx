@@ -10,13 +10,13 @@ function BookingCard() {
             Monika Salon
         </h1>
         <div>
-            <l1>
+            <li>
                 hair cut
-            </l1>
-            <l1>
+            </li>
+            <li>
                  massage therapy
-            </l1>
-            <l1> hair color</l1>
+            </li>
+            <li> hair color</li>
         </div>
         <div>
             <p>Time &  Date <ArrowRight/> 2025-01-15</p>

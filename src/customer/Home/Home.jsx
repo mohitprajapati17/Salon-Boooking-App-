@@ -1,9 +1,9 @@
 import React from 'react'
 import Banner from './Banner'
 import { services } from '../../Data/service'
-import SalonList from '../../Salon/SalonList'
+import SalonList from '../Salon/SalonList'
 import HomeServiceCard from './HomeServiceCard'
-import SalonCard from '../../Salon/SalonCard'
+import SalonCard from '../Salon/SalonCard'
 function Home() {
   return (
     <div className='space-y-20 bg-[#f5f5dc]'>
@@ -15,7 +15,7 @@ function Home() {
             <h1 className='text-2xl font-semibold pb-9'>What are  you looking for?</h1>
                 <div className='flex flex-wrap gap-5 justify-center items-center'>
                     {
-                        services.map((item)=><HomeServiceCard item={item}/>)
+                        services.map((item, index)=><HomeServiceCard key={index} item={item}/>)
                         
                     }
                 </div>
