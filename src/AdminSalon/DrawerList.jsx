@@ -13,42 +13,33 @@ function DrawerList({menu,menu2  ,toggleDrawer}) {
     }
 
   return (
-    <div className='h-full'>
-        <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
-            <div className='space-y-2'>
+    <div className='h-full w-[280px] border-r bg-white shadow-sm'>
+        <div className='flex flex-col justify-between h-full py-4'>
+            <div className='space-y-1'>
                 {menu.map((item,index) => (
-                   <div key={index}  onClick={()=>handleClick(item)} className= ' cursor-pointer pr-9 '>
-                    <div  className={`${item.path==location.pathname?"bg-primary-color text-secondary-color" : "bg-secondary-color text-primary-color"} flex items-center px-5 py-3 rounded-r-full `}>
-
-                        <ListItemIcon>
+                   <div key={index} onClick={()=>handleClick(item)} className='cursor-pointer mx-2'>
+                    <div className={`${item.path==location.pathname?"bg-green-500 text-white" : "text-gray-600 hover:bg-gray-100"} flex items-center px-4 py-3 rounded-r-full transition-colors duration-200`}>
+                        <ListItemIcon sx={{ minWidth: 40 }}>
                             {item.path==location.pathname?item.Activeicon:item.icon}
                         </ListItemIcon>
-                        <ListItemText>
-                            {item.name}
-                        </ListItemText>
-                        </div>
-                        
+                        <ListItemText primary={item.name} />
+                    </div>
                    </div>
                 ))}
             </div>
-        </div>
-        <div className='flex flex-col justify-between h-full w-[300px] border-r py-5'>
-
-        
-        <div className='space-y-2'>
-            {menu2.map((item,index) => (
-                <div key={index} onClick={()=>handleClick(item)} className='cursor-pointer pr-9 '>
-                <div className={`${item.path==location.pathname?"bg-primary-color text-secondary-color" : "bg-secondary-color text-primary-color"} flex items-center px-5 py-3 rounded-r-full gap-2`}>
-                    <ListItemIcon>
-                    {item.path==location.pathname?item.Activeicon:item.icon}
-                    </ListItemIcon>
-                    <ListItemText>
-                        {item.name}
-                    </ListItemText>
-                </div>
-                </div>
-            ))}
-        </div>
+            
+            <div className='space-y-1'>
+                {menu2.map((item,index) => (
+                    <div key={index} onClick={()=>handleClick(item)} className='cursor-pointer mx-2'>
+                        <div className={`${item.path==location.pathname?"bg-green-500 text-white" : "text-gray-600 hover:bg-gray-100"} flex items-center px-4 py-3 rounded-r-full transition-colors duration-200`}>
+                            <ListItemIcon sx={{ minWidth: 40 }}>
+                                {item.path==location.pathname?item.Activeicon:item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.name} />
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     </div>
   )

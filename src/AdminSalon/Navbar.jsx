@@ -13,7 +13,7 @@ export default function Navbar({DrawerList}) {
   return (
 
 
-    <div className ="h-[80px] flex items-center justify-between px-5 border-b">
+    <div className ="h-[80px] flex items-center justify-between px-5 border-b bg-white shadow-sm">
         <div className="flex items-center gap-3">
             <IconButton onClick={() => toggle(true)}>
                 <Menu color="primary"/>

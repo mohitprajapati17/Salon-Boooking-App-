@@ -40,18 +40,18 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function TransactionTable() {
+export default function CategoryTable() {
   return (
     <>
-    <h1 className="text-2xl font-bold py-5">Services</h1>
+    <h1 className="text-2xl font-bold py-5"></h1>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Date</StyledTableCell>
-            <StyledTableCell align="right">Customer Details</StyledTableCell>
-            <StyledTableCell align="right">Bookings</StyledTableCell>
-            <StyledTableCell align="right">Amount</StyledTableCell>
+            <StyledTableCell>Image</StyledTableCell>
+            <StyledTableCell align="right">Title</StyledTableCell>
+
+            <StyledTableCell align="right">Update</StyledTableCell>
             
           </TableRow>
         </TableHead>
@@ -62,9 +62,8 @@ export default function TransactionTable() {
                 {row.name}
               </StyledTableCell>
               <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
 
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
