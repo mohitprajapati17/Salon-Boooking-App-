@@ -80,9 +80,9 @@ const menu2=[
     },
 ]
 
-function SalonDrawerList() {
+function SalonDrawerList({ toggleDrawer }) {
   return (
-    <div><DrawerList menu={menu} menu2={menu2}/></div>
+    <div><DrawerList menu={menu} menu2={menu2} toggleDrawer={toggleDrawer}/></div>
   )
 }
 

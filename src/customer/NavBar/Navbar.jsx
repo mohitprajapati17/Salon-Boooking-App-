@@ -37,7 +37,7 @@ function Navbar() {
                     <NotificationsActive  color="primary"/>
                 </Badge>
             </IconButton>
-           {true? <div className="flex gap-1 item-center">
+           {false? <div className="flex gap-1 item-center">
                 <h1 className="font-bold my-3"> Mohit</h1>
                 <IconButton id="basic-button" aria-controls={open?'basic-menu':undefined} aria-expanded={open?true:undefined} aria-haspopup="true" onClick={handleClick}>
                     <Avatar sx={{bgcolor:"green"}}>
