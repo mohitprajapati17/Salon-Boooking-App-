@@ -9,7 +9,8 @@ import Navbar from "./customer/NavBar/Navbar";
 import { Routes, Route } from "react-router-dom";
 
 import CustomerRoutes from "./routes/CustomerRoutes";
-import { Login } from "@mui/icons-material";
+import Login from "./Auth/LoginForm";
+import Auth from "./Auth/Auth";
 import SignupForm from "./Auth/SignupForm";
 
 
@@ -20,9 +21,9 @@ function App() {
   return (
     <ThemeProvider theme={greenTheme}>
     <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/login" element={<Login/>}/> 
-    <Route path="/register" element={<SignupForm/>}/>
+
+    <Route path="/login" element={<Auth/>}/> 
+    <Route path="/register" element={<Auth/>}/>
     <Route path="/*" element={<CustomerRoutes/>}/>
     
 

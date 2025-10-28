@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { AccountCircle } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
 import { Logout } from '@mui/icons-material'
+import Login from '../../Auth/LoginForm'
 
 
 function Navbar() {
@@ -62,7 +63,7 @@ function Navbar() {
                 </Menu>
 
             </div>
-            :<IconButton>
+            :<IconButton  onClick={()=>navigate("/login")}>
                 <AccountCircle sx={{color:"green" , fontSize:"45px"}}/>
             </IconButton>
 

@@ -1,4 +1,5 @@
-import axios from "axios";
+
+
 import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
@@ -10,9 +11,7 @@ import {
   GET_USER_SUCCESS,
   GET_USER_FAILURE,
   LOGOUT,
-  GET_ALL_CUSTOMERS_REQUEST,
-  GET_ALL_CUSTOMERS_SUCCESS,
-  GET_ALL_CUSTOMERS_FAILURE,
+  
 } from "./actionTypes";
 import api, { API_BASE_URL } from "../../config/api";
 
@@ -20,13 +19,13 @@ export const registerUser = (userData) => async (dispatch) => {
   dispatch({ type: REGISTER_REQUEST });
   console.log("auth action - ",userData)
   try {
-    const response = await axios.post(
+    const response = await api.post(
       `${API_BASE_URL}/auth/signup`,
-      userData.userData
+      userData
     );
     const user = response.data;
-    if (user.data?.jwt) {
-      localStorage.setItem("jwt", user.data.jwt);
+    if (user?.jwt) {
+      localStorage.setItem("jwt", user.jwt);
       userData.navigate("/");
     }
     console.log("registerr :- ", user);
@@ -43,7 +42,7 @@ export const registerUser = (userData) => async (dispatch) => {
 export const loginUser = (userData) => async (dispatch) => {
   dispatch({type: LOGIN_REQUEST});
   try {
-    const response = await axios.post(
+    const response = await api.post(
       `${API_BASE_URL}/auth/login`,
       userData.data
     );

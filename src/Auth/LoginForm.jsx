@@ -4,48 +4,31 @@ import {Container ,TextField} from '@mui/material'
 import { useFormik } from 'formik'
 import {Button} from '@mui/material'
 import { useDispatch } from 'react-redux'
-import { registerUser } from '../Redux/Auth/action'
-import { Navigate, useNavigate } from 'react-router-dom'
-function SignupForm() {
-    const dispatch=useDispatch();
-    const navigate =useNavigate();
+import { useNavigate } from 'react-router-dom'
+import{ loginUser} from '../Redux/Auth/action' 
+function Login() {
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
   const formik =useFormik({
     initialValues:{
-      fullName:"",
       email:"",
-      password:"",
-      role:"SALON-OWNER"
-
+      password:""
     }
     ,
     onSubmit:(values)=>{
-        values.username=values.fullName;
         console.log(values);
-        dispatch(registerUser({data:values}))
+        dispatch(loginUser({data:values,navigate}))
     }
   })
   return (
     <Container component ={"main"} maxWidth="xs">
       <div>
         <Typography className ='text-center' variant='h5'>
-          Sign up
+          Login
 
 
         </Typography>
         <form  className="space-y-5" action="" onSubmit={formik.handleSubmit}>
-
-
-        <TextField
-          variant="outlined"
-          fullWidth
-          name="fullName"
-          id="fullName"
-          label="fullName"
-          required
-          onChange={formik.handleChange}
-          value={formik.values.fullName}
-          />
-
           <TextField
           variant="outlined"
           fullWidth
@@ -70,7 +53,7 @@ function SignupForm() {
           value={formik.values.password}
           />
 
-          <Button  variant ="contained" type ="submit"> Login </Button>
+          <Button variant ="contained" type ="submit"> Login </Button>
 
         </form>
 
@@ -80,4 +63,4 @@ function SignupForm() {
   )
 }
 
-export default SignupForm
+export default Login

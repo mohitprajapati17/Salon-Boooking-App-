@@ -10,13 +10,13 @@ function BookingCard() {
             Monika Salon
         </h1>
         <div>
-            <li>
+            <l1>
                 hair cut
-            </li>
-            <li>
+            </l1>
+            <l1>
                  massage therapy
-            </li>
-            <li> hair color</li>
+            </l1>
+            <l1> hair color</l1>
         </div>
         <div>
             <p>Time &  Date <ArrowRight/> 2025-01-15</p>
@@ -29,8 +29,6 @@ function BookingCard() {
         <img  className="h-28 w-28" src="https://i.pinimg.com/736x/f8/46/a6/f846a6e7fabd5ca988d643c35ff36869.jpg" alt=""/>
         <p className ="text-center">$56</p>
         <Button color="error" variant="outlined">Cancelled</Button>
-
-
     </div>
 
     </div>
